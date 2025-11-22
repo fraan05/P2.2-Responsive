@@ -1,0 +1,377 @@
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/NeueMontreal-Medium.woff2') format('woff2'),
+       url('../fonts/NeueMontreal-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --color-primary: #0d1a3c;
+  --color-secondary: #f4c47b;
+  --color-accent: #d85c27;
+  --color-text-dark: #333;
+  --color-text-medium: #555;
+  --color-background-light: #f7f3ed;
+
+  --max-width: 1200px;
+  --section-padding: 80px 0;
+  --section-padding-h: 5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Neue Montreal', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-h);
+}
+
+.hero {
+  position: relative;
+  min-height: 85vh;
+  color: #fff;
+  background: url("../img/header-background.jpg") center/cover no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.top-bar {
+  background: var(--color-primary);
+  padding: 10px 0;
+  font-size: 0.85em;
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-h);
+}
+
+.top-bar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.top-bar a:hover {
+  opacity: 0.8;
+}
+
+.language-switcher {
+  margin: 0 20px;
+}
+
+nav {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px var(--section-padding-h);
+}
+
+.logo img {
+  height: 40px;
+  filter: brightness(0) invert(1);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.hero-content {
+  position: absolute;
+  top: 40%;
+  left: var(--section-padding-h);
+  max-width: 600px;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.hero-content p {
+  margin-bottom: 20px;
+}
+
+.highlight {
+  font-weight: bold;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.primary {
+  background: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  color: #2c2c2c;
+}
+
+.primary:hover {
+  background: #e5b36a;
+  border-color: #e5b36a;
+}
+
+.secondary {
+  background: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  color: #fff;
+}
+
+.secondary:hover {
+  background: #c45021;
+  border-color: #c45021;
+}
+
+.about {
+  background: var(--color-background-light);
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 80px 0;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.about h2 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: var(--color-text-dark);
+}
+
+.about p {
+  margin-bottom: 20px;
+  color: var(--color-text-medium);
+}
+
+.services {
+  position: relative;
+  background: url("../img/techo-cristal.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 28, 48, 0.4);
+}
+
+.services > .container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.services h3 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.team {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.team-members {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.team article img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.testimonials {
+  background: var(--color-background-light);
+  text-align: center;
+  padding: 80px 0;
+}
+
+.testimonials-container {
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: 40px;
+  margin-top: 40px;
+}
+
+blockquote {
+  background: #fff;
+  padding: 20px;
+  border-left: 4px solid #0c7b93;
+}
+
+.contact-form {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.location {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.location iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  margin-top: 20px;
+}
+
+footer {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footer-content {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--section-padding-h);
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+footer a:hover {
+  opacity: 1;
+}
+
+footer h4 {
+  margin-bottom: 15px;
+}
+
+.newsletter input {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  width: 70%;
+}
+
+.newsletter button {
+  padding: 10px 15px;
+  border: none;
+  background: var(--color-secondary);
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.newsletter button:hover {
+  background: #e5b36a;
+}
+
+@media (min-width: 600px) {
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .top-bar-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .language-switcher {
+        margin: 0 20px;
+    }
+    .hero-buttons {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 992px) {
+    .nav-links {
+        display: flex;
+        gap: 30px;
+    }
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .about {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        padding: var(--section-padding);
+    }
+    .about h2 {
+        font-size: 2.2em;
+    }
+}
